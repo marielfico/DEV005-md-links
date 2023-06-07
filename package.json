@@ -1,5 +1,5 @@
 {
-  "name": "md-links",
+  "name": "mdlinks-fico",
   "bin":
   {"mdlinks-fico":"./src/cli.js"},
   "version": "0.1.0",
