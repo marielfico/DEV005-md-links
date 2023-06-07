@@ -8,12 +8,23 @@ describe('mdLinks', () => {
   // it('Deberia devolver una función',()=>{
   //   expect(typeof mdLinks).toBe( 'function');
   // });
-  it('Debería devolver una promesa', () => {
+  test('Debería devolver una promesa', () => {
     const path = 'C:/Users/DREP/Downloads/carpeta md/DEPLOYMENT.md'
     const option={validate:true}
-    return (mdLinks(path, option).then(links=>{
-      expect(Array.isArray(links).toBe(true));
-    }));
+    //return (mdLinks(path, option).then(links=>{
+      return expect (mdLinks(path, option)).resolves.toBe('peanut butter');
+      //expect (links).toBe('peanut butter')
+      //expect(Array.isArray(links).toBe(true));
+  //  }));
+  });
+  test('Debería devolver un error', () => {
+    const path = 'C:/Users/DREP/Downloads/carpeta md/DEPLOYMENT.m'
+    const option={validate:true}
+    //return (mdLinks(path, option).then(links=>{
+      return expect (mdLinks(path, option)).rejectes.toMatch('error');
+      //expect (links).toBe('peanut butter')
+      //expect(Array.isArray(links).toBe(true));
+  //  }));
   });
 
 
