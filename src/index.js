@@ -7,6 +7,7 @@ const mdLinks=(path, option)=>{
   return new Promise((resolve, reject)=>{
     const result=validRoute(path);  
     if(typeof result==='object'){ 
+      //console.log('esto es option validate: '+option.validate);
       if(option.validate===true) {
         //sconsole.log('RUTA VALIDADA')
         //const links=
@@ -22,7 +23,7 @@ const mdLinks=(path, option)=>{
         resolve(readFileMd(result));
       }
     }else{
-      reject('La ruta no existe reject');
+      reject('La ruta no existe, ingrese una ruta válida');
     }
   })
 }
